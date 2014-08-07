@@ -12,9 +12,12 @@ group 'development' do
   gem 'sqlite3'
 end
 
-group 'test' do
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
 end
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
