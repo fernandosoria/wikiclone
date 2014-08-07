@@ -3,6 +3,18 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
 
+# Use Bootstrap
+gem 'bootstrap-sass', '~> 3.1.1'
+
+# Use Devise user authentication
+gem 'devise'
+
+# Use Figaro to configure values with sensitive information
+gem 'figaro'
+
+# Use Faker to auto generate fake data
+gem 'faker'
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'
