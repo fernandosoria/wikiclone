@@ -15,6 +15,9 @@ gem 'figaro'
 # Use Faker to auto generate fake data
 gem 'faker'
 
+# Use FriendlyId to create readable URLs
+gem 'friendly_id', "~> 5.0.1"
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'
