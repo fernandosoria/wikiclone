@@ -18,6 +18,9 @@ gem 'faker'
 # Use FriendlyId to create readable URLs
 gem 'friendly_id', "~> 5.0.1"
 
+# Use Redcarpet to generate markdown text
+gem 'redcarpet'
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'
