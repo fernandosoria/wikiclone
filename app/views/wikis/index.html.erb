@@ -8,4 +8,6 @@
   </div>
 </div>
 <% end %>
-<%= link_to "New wiki", new_wiki_path, class: 'btn btn-success' %>
+<% if policy(Wiki.new).create? %>
+  <%= link_to "New wiki", new_wiki_path, class: 'btn btn-success' %>
+<% end %>

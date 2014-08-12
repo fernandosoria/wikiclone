@@ -1,6 +1,7 @@
 class WikisController < ApplicationController
   def index
     @wikis = Wiki.all
+    authorize @wikis
   end
 
   def show
@@ -13,14 +14,17 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
   def edit
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   def create
-    @wiki = Wiki.new(wiki_params)
+    @wiki = current_user.wikis.build(wiki_params)
+    authorize @wiki
 
     if @wiki.save
       redirect_to @wiki, notice: "Wiki sucessfully saved."
@@ -32,6 +36,7 @@ class WikisController < ApplicationController
   def update
     @wiki = Wiki.find(params[:id])
     @wiki.slug = nil
+    authorize @wiki
 
     if @wiki.update_attributes(wiki_params)
       redirect_to @wiki, notice: "Wiki sucessfully saved."
@@ -43,6 +48,7 @@ class WikisController < ApplicationController
   def destroy
     @wiki = Wiki.find(params[:id])
     name = @wiki.title
+    authorize @wiki
 
     if @wiki.destroy
       redirect_to wikis_path, notice: "\"#{name}\" sucessfully deleted."

@@ -21,6 +21,9 @@ gem 'friendly_id', "~> 5.0.1"
 # Use Redcarpet to generate markdown text
 gem 'redcarpet'
 
+# Use Pundit to generate authorization for roles
+gem 'pundit'
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'

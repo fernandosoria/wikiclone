@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808215256) do
+ActiveRecord::Schema.define(version: 20140811230406) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140808215256) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -55,8 +56,10 @@ ActiveRecord::Schema.define(version: 20140808215256) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "user_id"
   end
 
   add_index "wikis", ["slug"], name: "index_wikis_on_slug"
+  add_index "wikis", ["user_id"], name: "index_wikis_on_user_id"
 
 end
