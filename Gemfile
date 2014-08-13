@@ -24,6 +24,9 @@ gem 'redcarpet'
 # Use Pundit to generate authorization for roles
 gem 'pundit'
 
+# Use HAML to generate HTML
+gem 'haml-rails'
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'

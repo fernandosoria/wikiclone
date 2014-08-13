@@ -1,0 +1,7 @@
+%h1 Wikis
+- @wikis.each do |wiki|
+  .media
+    .media-body
+      %h4.media-heading= link_to wiki.title, wiki
+- if policy(Wiki.new).create?
+  %a.btn.btn-success{href: new_wiki_path} New wiki
