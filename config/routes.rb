@@ -1,6 +1,6 @@
 Wikiclone::Application.routes.draw do
   devise_for :users
-  resources :users, only: [:update]
+  resources :users, only: [:update, :show]
 
   resources :wikis
 
