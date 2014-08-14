@@ -27,6 +27,9 @@ gem 'pundit'
 # Use HAML to generate HTML
 gem 'haml-rails'
 
+# Use Stripe to generate payment integration for premium accounts
+gem 'stripe'
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'
