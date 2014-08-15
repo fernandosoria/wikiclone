@@ -18,6 +18,11 @@
     .form-group
       = form.label :public, class: 'checkbox' do
         #{form.check_box :public} Public Wiki
+
+    .form-group
+      %ul.list-unstyled
+        - @users.each do |user|
+          %li= check_box_tag user.name
   
   .form-group
     = form.submit 'Save', class: 'btn btn-success'

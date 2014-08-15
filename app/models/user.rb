@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :wikis
+  has_many :wikicollaborators, through: :users_wikis
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
