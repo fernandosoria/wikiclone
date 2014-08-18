@@ -19,7 +19,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
-    @users = User.all
+    @users = (current_user.blank? ? User.all : User.find(:all, :conditions => ["id != ?", current_user.id]))
     authorize @wiki
   end
 
@@ -61,6 +61,6 @@ class WikisController < ApplicationController
   private
 
   def wiki_params
-    params.require(:wiki).permit(:title, :body, :public)
+    params.require(:wiki).permit(:title, :body, :public, collaborator_ids:[])
   end
 end
