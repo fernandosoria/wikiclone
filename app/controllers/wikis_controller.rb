@@ -14,6 +14,7 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    @users = (current_user.blank? ? User.all : User.find(:all, :conditions => ["id != ?", current_user.id]))
     authorize @wiki
   end
 

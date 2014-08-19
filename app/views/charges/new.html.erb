@@ -8,7 +8,7 @@
     class='stripe-button'
     src="https://checkout.stripe.com/checkout.js"
     data-key="<%= @stripe_btn_data[:key] %>"
-    data-image="http://www.trakathletics.com/wp-content/uploads/2014/01/wikipedia_icon_by_emptiedpie-d6lahv4.png"
+    data-image="<%= asset_path('wikiclone-logo.png') %>"
     data-name="<%= @stripe_btn_data[:name] %>"
     data-amount="<%= @stripe_btn_data[:amount] %>"
     data-description="<%= @stripe_btn_data[:description] %>" >

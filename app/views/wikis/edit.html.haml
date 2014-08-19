@@ -1,4 +1,5 @@
 %h2 Edit Wiki
 .row
   .col-md-12
-    = render partial: 'form', locals: {wiki: @wiki}
+    .row
+      = render partial: 'form', locals: {wiki: @wiki}
