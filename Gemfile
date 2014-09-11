@@ -30,6 +30,9 @@ gem 'haml-rails'
 # Use Stripe to generate payment integration for premium accounts
 gem 'stripe'
 
+# Use New Relic for app performance monitoring
+gem 'newrelic_rpm'
+
 group 'production' do
   gem 'pg'
   gem 'rails_12factor'
